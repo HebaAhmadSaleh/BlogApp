@@ -1,53 +1,39 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
+import React from 'react';
 import {
   AppRegistry,
-  StyleSheet,
   Text,
   View
 } from 'react-native';
+import HomeScreen from './Containers/HomeScreen';
+import { StackNavigator } from 'react-navigation';
 
-export default class BlogApp extends Component {
+import Icon from 'react-native-vector-icons/dist/SimpleLineIcons';
+
+
+class SplashScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome',
+    header: null
+  }
+
+  componentWillMount = () => {
+    const { navigate } = this.props.navigation;
+    setTimeout(() => {
+      navigate('Home');
+    }, 1000)
+  }
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
+    return (<View>
+
+      <Text>Hello, Navigation!</Text>
+    </View>);
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+const SimpleApp = StackNavigator({
+  SplashScreen: { screen: SplashScreen },
+  Home: { screen: HomeScreen },
+
 });
 
-AppRegistry.registerComponent('BlogApp', () => BlogApp);
+AppRegistry.registerComponent('BlogApp', () => SimpleApp);
