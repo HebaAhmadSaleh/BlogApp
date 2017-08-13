@@ -15,5 +15,4 @@ import {
 import {SimpleApp} from './App';
 
 
-
 AppRegistry.registerComponent('BlogApp', () => SimpleApp);

@@ -1,117 +1,174 @@
 {
-  "categories": [
-    {
-      "id": "1",
-      "name": "",
-      "blogsList": [1, 25, 18, 13]
-    },
-    {
-      "id": "2",
-      "name": "",
-      "blogsList": [1, 25, 18, 13]
-    },
-    {
-      "id": "1",
-      "name": "",
-      "blogsList": [1, 25, 18, 13]
-    }
-  ],
-  "blogs": [
-    {
-      "id": "1",
-      "userId": "2",
-      "categories": [2, 3],
-      "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-    },
-    {
-      "id": "2",
-      "userId": "2",
-      "categories": [1],
-      "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-    },
-  ],
-  "commets": [
-    {
-      "postId": 1,
-      "id": 1,
-      "name": "id labore ex et quam laborum",
-      "email": "Eliseo@gardner.biz",
-      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
-    },
-    {
-      "postId": 2,
-      "id": 2,
-      "name": "quo vero reiciendis velit similique earum",
-      "email": "Jayne_Kuhic@sydney.com",
-      "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
-    },
-    {
-      "postId": 1,
-      "id": 3,
-      "name": "odio adipisci rerum aut animi",
-      "email": "Nikita@garfield.biz",
-      "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
-    },
-    {
-      "postId": 3,
-      "id": 4,
-      "name": "alias odio sit",
-      "email": "Lew@alysha.tv",
-      "body": "non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati"
-    },
-    {
-      "postId": 1,
-      "id": 5,
-      "name": "vero eaque aliquid doloribus et culpa",
-      "email": "Hayden@althea.biz",
-      "body": "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "blogs": [25, 18, 16, 1],
-      "email": "Sincere@april.biz",
-      "address": {
-        "facebook": "Kulas Light",
-        "twitter": "Apt. 556",
-        "instagram": "Gwenborough",
-        "github": "92998-3874"
+  "data": {
+    "categories": [
+      {
+        "id": "1",
+        "name": "raising"
       },
-      "phone": "1-770-736-8031 x56442",
-      "website": "hildegard.org"
-    },
-    {
-      "id": 2,
-      "name": "Ervin Howell",
-      "username": "Antonette",
-      "blogs": [25, 18, 16, 1],
-      "email": "Shanna@melissa.tv",
-      "address": {
-        "facebook": "Victor Plains",
-        "twitter": "Suite 879",
-        "instagram": "Wisokyburgh",
-        "github": "90566-7771"
+      {
+        "id": "2",
+        "name": "Technology"
       },
-      "phone": "010-692-6593 x09125",
-      "website": "anastasia.net",
-    },
-    {
-      "id": 3,
-      "name": "Clementine Bauch",
-      "username": "Samantha",
-      "blogs": [25, 18, 16, 1],
-      "email": "Nathan@yesenia.net",
-      "address": {
-        "facebook": "Douglas Extension",
-        "twitter": "Suite 847",
-        "instagram": "McKenziehaven",
-        "github": "59590-4157",
+      {
+        "id": "3",
+        "name": "Scientific"
       },
-      "phone": "1-463-123-4447",
-      "website": "ramiro.info"
-    }
-  ]
+      {
+        "id": "4",
+        "name": "Social Problems"
+      }
+    ],
+    "blogs": [
+      {
+        "id": "1",
+        "userId": "1",
+        "categories": [
+          2,
+          3
+        ],
+        "image": "http://cdn.moneycrashers.com/wp-content/uploads/2012/03/apple-imac-27.jpg",
+        "title": "The Computer",
+        "body": "Man has made several inventions. Computer is one of them. The computer has begun to control so many critical functions that today man is excessively proud about his invention. Today, the computer plays an important role in our lives and we are completely dependent on him."
+      },
+      {
+        "id": "2",
+        "userId": "2",
+        "image": "https://borgenproject.org/wp-content/uploads/Child-Labor-in-Vietnam.jpg",
+        "categories": [4],
+        "title": "Child labour",
+        "body": "The term ‘child labour’, as defined by International Labour Organization (ILO), is the work that deprives children of their childhood, their potential and their dignity, and that is harmful to physical and mental development. It refers to work that is mentally, physically, socially or morally dangerous and harmful to children, or work whose schedule interferes with their ability to attend regular school, or work that affects in any manner their ability to focus during school or experience healthy childhood."
+      },
+      {
+        "id": "3",
+        "userId": "3",
+        "categories": [
+          2,
+          3
+        ],
+        "image": "https://image.slidesharecdn.com/atoms-140825094048-phpapp01/95/introduction-to-atomic-energy-and-nuclear-reactors-1-638.jpg?cb=1408959736",
+        "title": "Atomic Energy",
+        "body": "Until World War II, the world was familiar with only mechanical, chemical, acoustic, thermal, optic magnetic and electrical form of energy. But on a fateful day in 1945 when the US explode atom bomb over Hiroshima, the world got aware of the nuclear energy."
+      },
+      {
+        "id": "4",
+        "userId": "3",
+        "categories": [
+          3,
+          4
+        ],
+        "image": "https://www.lvusd.org/cms/lib/CA01930645/Centricity/Domain/724/character.png",
+        "title": "Character Building",
+        "body": "The word character when used it is generally attributed to an individual only, but it is not so, as-the word is equally applicable to a social group or a nation. A set of distinctive personal qualities found in an individual constitutes the character of that particular person and the something applies to a nation or social groups."
+      },
+      {
+        "id": "5",
+        "userId": "3",
+        "categories": [
+          7
+        ],
+        "image": "http://indianapublicmedia.org/amomentofscience/files/2016/03/amos_atmos-940x626.jpg",
+        "title": "Ozone layer Depletion",
+        "body": "Ozone is the layer of colourless gas that forms a protective covering in the Earth’s upper atmosphere. Ozone is formed when oxygen molecules absorb ultraviolet photons and undergo a chemical reaction known as photo dissociation or photolysis, where a single molecule of oxygen breaks down to two oxygen atoms. The ozone molecules, in turn, absorb ultraviolet rays between 310 to 200 nm wavelengths and thereby prevent these harmful radiations from entering the Earth’s atmosphere. In the process, ozone molecules split up into a molecule of oxygen and an oxygen atom. The oxygen atom (O) again combines with the oxygen molecule (O2) to regenerate an ozone molecule (O3). Thus, the total amount of ozone is maintained by this continuous process of destruction and regeneration."
+      }
+    ],
+    "commets": [
+      {
+        "postId": 1,
+        "id": 1,
+        "name": "id labore ex et quam laborum",
+        "email": "Eliseo@gardner.biz",
+        "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+      },
+      {
+        "postId": 2,
+        "id": 2,
+        "name": "quo vero reiciendis velit similique earum",
+        "email": "Jayne_Kuhic@sydney.com",
+        "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+      },
+      {
+        "postId": 1,
+        "id": 3,
+        "name": "odio adipisci rerum aut animi",
+        "email": "Nikita@garfield.biz",
+        "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+      },
+      {
+        "postId": 3,
+        "id": 4,
+        "name": "alias odio sit",
+        "email": "Lew@alysha.tv",
+        "body": "non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati"
+      },
+      {
+        "postId": 1,
+        "id": 5,
+        "name": "vero eaque aliquid doloribus et culpa",
+        "email": "Hayden@althea.biz",
+        "body": "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "blogs": [
+          25,
+          18,
+          16,
+          1
+        ],
+        "email": "Sincere@april.biz",
+        "address": {
+          "facebook": "Kulas Light",
+          "twitter": "Apt. 556",
+          "instagram": "Gwenborough",
+          "github": "92998-3874"
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org"
+      },
+      {
+        "id": 2,
+        "name": "Ervin Howell",
+        "username": "Antonette",
+        "blogs": [
+          25,
+          18,
+          16,
+          1
+        ],
+        "email": "Shanna@melissa.tv",
+        "address": {
+          "facebook": "Victor Plains",
+          "twitter": "Suite 879",
+          "instagram": "Wisokyburgh",
+          "github": "90566-7771"
+        },
+        "phone": "010-692-6593 x09125",
+        "website": "anastasia.net"
+      },
+      {
+        "id": 3,
+        "name": "Clementine Bauch",
+        "username": "Samantha",
+        "blogs": [
+          25,
+          18,
+          16,
+          1
+        ],
+        "email": "Nathan@yesenia.net",
+        "address": {
+          "facebook": "Douglas Extension",
+          "twitter": "Suite 847",
+          "instagram": "McKenziehaven",
+          "github": "59590-4157"
+        },
+        "phone": "1-463-123-4447",
+        "website": "ramiro.info"
+      }
+    ]
+  }
 }

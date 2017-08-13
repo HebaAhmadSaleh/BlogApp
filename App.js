@@ -7,10 +7,12 @@ import {
     Image
 } from 'react-native';
 import HomeScreen from './Containers/HomeScreen';
+import BlogDetails from './Containers/BlogDetails';
+
 import { StackNavigator } from 'react-navigation';
 
 import Icon from 'react-native-vector-icons/dist/SimpleLineIcons';
-import blogIcon from './Images/blogger-logo-icon-png-10.png';
+import blogIcon from './Images/blogger-5-512.png';
 
 class SplashScreen extends Component {
     static navigationOptions = {
@@ -26,8 +28,8 @@ class SplashScreen extends Component {
     }
     render() {
         return (<View style={styles.container}>
-            <Icon name="note" size={120} color="white" />
-            {/* <Image source={blogIcon} style={styles.logo} /> */}
+            {/* <Icon name="note" size={120} color="white" /> */}
+             <Image source={blogIcon} style={styles.logo} /> 
         </View>);
     }
 }
@@ -35,10 +37,9 @@ class SplashScreen extends Component {
 export const SimpleApp = StackNavigator({
     SplashScreen: { screen: SplashScreen },
     Home: { screen: HomeScreen },
+    Blog: {screen: BlogDetails}
 
 });
-
-//AppRegistry.registerComponent('BlogApp', () => SimpleApp);
 
 
 const styles = StyleSheet.create({
@@ -46,12 +47,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#FF7D00',
+       // backgroundColor: '#8DC63F',
+       // backgroundColor: '#FF7D00',
+        backgroundColor: '#00aaaa',
         //opacity:0.2
     },
     logo: {
         height: 200,
         width: 200,
-
     }
 })
