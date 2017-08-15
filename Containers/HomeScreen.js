@@ -9,9 +9,9 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Card, Button, Divider } from 'react-native-material-design';
-import  BlogItem from '../Components/BlogItem';
+import BlogItem from '../Components/BlogItem';
 
-import { blogDetailsHelpers } from './helpers.js/BlogDetails';
+import { blogDetailsHelpers } from './helpers/BlogDetails';
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
@@ -22,29 +22,28 @@ export default class HomeScreen extends React.Component {
     }
 
     static navigationOptions = {
-        title: 'Home Screen',
-        header: null,
+
+        title: 'Home Page',
     }
 
     componentWillMount() {
+        const { categoryId } = this.props.navigation.state.params;
         const blog = new blogDetailsHelpers();
-        blog.getBlogs("http://192.168.56.1:3000/data").then(blogs => this.setState({ blogs }));
+        blog.getBlogs("http://192.168.56.1:3000/data", categoryId).then(blogs => this.setState({ blogs }));
 
     }
 
     _keyExtractor = blog => blog.id;
 
     _renderItem = (blog) => {
-        return(
+        return (
             <BlogItem blog={blog} />
         )
     }
     render() {
-        console.log(this.state.blogs)
         return (
             <FlatList
                 data={this.state.blogs}
-                extraData={this.state}
                 keyExtractor={this._keyExtractor}
                 renderItem={this._renderItem}
             />

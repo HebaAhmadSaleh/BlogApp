@@ -3,29 +3,30 @@
     "categories": [
       {
         "id": "1",
-        "name": "raising"
+        "name": "raising",
+        "image":"https://thoughtcatalog.files.wordpress.com/2014/02/shutterstock_100800745.jpg?w=584&h=394"
       },
       {
         "id": "2",
-        "name": "Technology"
+        "name": "Technology",
+        "image":"https://janzz.technology/wp-content/uploads/2014/07/janzz_technology_welcome.jpg"
       },
       {
         "id": "3",
-        "name": "Scientific"
+        "name": "Scientific",
+        "image":"http://www.braintreehighnews.com/wp-content/uploads/2014/02/Science.jpg"
       },
       {
         "id": "4",
-        "name": "Social Problems"
+        "name": "Social Problems",
+        "image":"http://edynamiclearning.com/wp-content/uploads/2014/04/300dpi_social_problems_I_t_sm-695x530.jpg"
       }
     ],
     "blogs": [
       {
         "id": "1",
         "userId": "1",
-        "categories": [
-          2,
-          3
-        ],
+        "category": 2,
         "image": "http://cdn.moneycrashers.com/wp-content/uploads/2012/03/apple-imac-27.jpg",
         "title": "The Computer",
         "body": "Man has made several inventions. Computer is one of them. The computer has begun to control so many critical functions that today man is excessively proud about his invention. Today, the computer plays an important role in our lives and we are completely dependent on him."
@@ -34,17 +35,14 @@
         "id": "2",
         "userId": "2",
         "image": "https://borgenproject.org/wp-content/uploads/Child-Labor-in-Vietnam.jpg",
-        "categories": [4],
+        "category": 4,
         "title": "Child labour",
         "body": "The term ‘child labour’, as defined by International Labour Organization (ILO), is the work that deprives children of their childhood, their potential and their dignity, and that is harmful to physical and mental development. It refers to work that is mentally, physically, socially or morally dangerous and harmful to children, or work whose schedule interferes with their ability to attend regular school, or work that affects in any manner their ability to focus during school or experience healthy childhood."
       },
       {
         "id": "3",
         "userId": "3",
-        "categories": [
-          2,
-          3
-        ],
+        "category": 3,
         "image": "https://image.slidesharecdn.com/atoms-140825094048-phpapp01/95/introduction-to-atomic-energy-and-nuclear-reactors-1-638.jpg?cb=1408959736",
         "title": "Atomic Energy",
         "body": "Until World War II, the world was familiar with only mechanical, chemical, acoustic, thermal, optic magnetic and electrical form of energy. But on a fateful day in 1945 when the US explode atom bomb over Hiroshima, the world got aware of the nuclear energy."
@@ -52,10 +50,7 @@
       {
         "id": "4",
         "userId": "3",
-        "categories": [
-          3,
-          4
-        ],
+        "category": 4,
         "image": "https://www.lvusd.org/cms/lib/CA01930645/Centricity/Domain/724/character.png",
         "title": "Character Building",
         "body": "The word character when used it is generally attributed to an individual only, but it is not so, as-the word is equally applicable to a social group or a nation. A set of distinctive personal qualities found in an individual constitutes the character of that particular person and the something applies to a nation or social groups."
@@ -63,9 +58,7 @@
       {
         "id": "5",
         "userId": "3",
-        "categories": [
-          7
-        ],
+        "category":2,
         "image": "http://indianapublicmedia.org/amomentofscience/files/2016/03/amos_atmos-940x626.jpg",
         "title": "Ozone layer Depletion",
         "body": "Ozone is the layer of colourless gas that forms a protective covering in the Earth’s upper atmosphere. Ozone is formed when oxygen molecules absorb ultraviolet photons and undergo a chemical reaction known as photo dissociation or photolysis, where a single molecule of oxygen breaks down to two oxygen atoms. The ozone molecules, in turn, absorb ultraviolet rays between 310 to 200 nm wavelengths and thereby prevent these harmful radiations from entering the Earth’s atmosphere. In the process, ozone molecules split up into a molecule of oxygen and an oxygen atom. The oxygen atom (O) again combines with the oxygen molecule (O2) to regenerate an ozone molecule (O3). Thus, the total amount of ozone is maintained by this continuous process of destruction and regeneration."

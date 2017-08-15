@@ -12,7 +12,7 @@ import { Card, Button, Divider } from 'react-native-material-design';
 
 
 
-import {blogDetailsHelpers} from './helpers.js/BlogDetails';
+import { blogDetailsHelpers } from './helpers/BlogDetails';
 
 export default class BlogDetails extends React.Component {
 

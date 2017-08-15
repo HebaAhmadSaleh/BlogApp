@@ -24,11 +24,12 @@ export class blogDetailsHelpers {
             });
     }
 
-     getBlogs = (url) => {
+     getBlogs = (url,id) => {
         return axios.get(url)
             .then((response) => {
                 // the id of the blog will sent as a prop to the component in Navigating
-                let blogs = response.data.blogs;
+                let blogs = response.data.blogs.filter((blog) =>  {
+                    return blog.category == id })
                 return blogs;
             }).catch((error) => {
                 console.log(error.message);
