@@ -9,6 +9,7 @@ import {
 import HomeScreen from './Containers/HomeScreen';
 import BlogDetails from './Containers/BlogDetails';
 import Categories from './Containers/Categories';
+import AboutUs from './Containers/AboutUs';
 
 import { StackNavigator } from 'react-navigation';
 
@@ -30,16 +31,19 @@ class SplashScreen extends Component {
     render() {
         return (<View style={styles.container}>
             {/* <Icon name="note" size={120} color="white" /> */}
-             <Image source={blogIcon} style={styles.logo} />
+            <Image source={blogIcon} style={styles.logo} />
         </View>);
     }
 }
 
+
 export const SimpleApp = StackNavigator({
     SplashScreen: { screen: SplashScreen },
-    Categories: {  screen: Categories },
     Home: { screen: HomeScreen },
-    Blog: {screen: BlogDetails},
+    Blog: { screen: BlogDetails },
+    Categories: { screen: Categories },
+    AboutUs: { screen: AboutUs }
+
 
 });
 
@@ -49,8 +53,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-       // backgroundColor: '#8DC63F',
-       // backgroundColor: '#FF7D00',
+        // backgroundColor: '#8DC63F',
+        // backgroundColor: '#FF7D00',
         backgroundColor: '#00aaaa',
         //opacity:0.2
     },

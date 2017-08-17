@@ -7,7 +7,7 @@ import { StackNavigator } from 'react-navigation';
 
 export default class AboutUs extends React.Component {
   static navigationOptions = {
-    title: 'AboutUs Screen',
+    title: 'AboutUs ',
   }
   render() {
     return <Text>Hello, Navigation!</Text>;
