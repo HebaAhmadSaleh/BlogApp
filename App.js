@@ -24,7 +24,7 @@ class SplashScreen extends Component {
     componentWillMount = () => {
         const { navigate } = this.props.navigation;
         setTimeout(() => {
-            navigate('Categories');
+            navigate('Home');
         }, 2000)
     }
     render() {
@@ -39,7 +39,7 @@ export const SimpleApp = StackNavigator({
     SplashScreen: { screen: SplashScreen },
     Categories: {  screen: Categories },
     Home: { screen: HomeScreen },
-    Blog: {screen: BlogDetails}
+    Blog: {screen: BlogDetails},
 
 });
 
