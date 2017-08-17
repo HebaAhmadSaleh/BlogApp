@@ -8,6 +8,7 @@ import {
     FlatList,
     Modal
 } from 'react-native';
+import { API_URL } from 'react-native-dotenv';
 
 import { categoriesHelpers } from './helpers/categories';
 import CategoryItem from '../Components/CategoryItem';
@@ -63,7 +64,7 @@ export default class Categories extends Component {
 
     componentWillMount() {
         const category = new categoriesHelpers();
-        category.getCategories("http://192.168.56.1:3000/data").then((categories) => {
+        category.getCategories(API_URL).then((categories) => {
             if (categories)
                 this.setState({ categories })
             return;
