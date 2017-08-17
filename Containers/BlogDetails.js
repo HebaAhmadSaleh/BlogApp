@@ -13,7 +13,7 @@ import { Card, Button, Divider, Avatar } from 'react-native-material-design';
 import BlogItem from '../Components/BlogItem';
 
 import { style } from '../Components/Styles/BlogItemStyle';
-// import { API_URL } from 'react-native-dotenv';
+ import { API_URL } from 'react-native-dotenv';
 
 
 import { blogDetailsHelpers } from './helpers/BlogDetails';
@@ -34,7 +34,7 @@ export default class BlogDetails extends React.Component {
 
     componentWillMount() {
         const blog = new blogDetailsHelpers();
-        blog.getAuthorByBlogId("http://192.168.56.1:3000/data", this.props.navigation.state.params.blog.userId).then(author => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
+        blog.getAuthorByBlogId(API_URL, this.props.navigation.state.params.blog.userId).then(author => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
 
     }
 
