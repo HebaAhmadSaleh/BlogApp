@@ -44,4 +44,25 @@ export class blogDetailsHelpers {
                 return error.message;
             });
     }
+
+     getAuthorByBlogId = (url,id) => {
+        return axios.get(url)
+            .then((response) => {
+                // the id of the blog will sent as a prop to the component in Navigating
+                let Author = response.data.users.filter((user) =>  {
+                    return user.userId == id })
+                return Author;
+            }).catch((error) => {
+                console.log(error.message);
+
+                if (error.response) {
+                    // The request was made and the server responded with a status code 
+                    // that falls out of the range of 2xx 
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                }
+                return error.message;
+            });
+    }
 }

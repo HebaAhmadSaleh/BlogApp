@@ -24,7 +24,7 @@
     ],
     "blogs": [
       {
-        "id": "1",
+        "id": 1,
         "userId": "1",
         "category": 2,
         "image": "http://cdn.moneycrashers.com/wp-content/uploads/2012/03/apple-imac-27.jpg",
@@ -33,7 +33,7 @@
         "content": "Its has been commonly said that computer can never replace the human brain, as it is created by humans, but we can’t ignore the fact that computer is much more capable than human brain. There are many ways in which the computer has an edge over man. The computer has the capability to evaluate problems that man can hardly imagine.Even if a man can calculate the same problems as a computer, the computer can do it faster with 100% accuracy. The computer is clearly superior in many other aspects. In absolute speed of computation and retrieval of data, the computer is obviously by far the stronger. It has the capacity to handle things on a far bigger scale than the human brain could ever do. Measurements, results, applications can all be done to the smallest details, far beyond the human brains’s capabilities."
       },
       {
-        "id": "2",
+        "id": 2,
         "userId": "2",
         "image": "https://borgenproject.org/wp-content/uploads/Child-Labor-in-Vietnam.jpg",
         "category": 4,
@@ -42,7 +42,7 @@
         "content": "According to ILO, children or adolescents who participate in work that does not affect their health and personal development or interfere with their schooling, is not child labour; rather it may generally be regarded as being something positive. Such harmless work includes activities such as helping their parents around the home, assisting family or earning pocket money outside school hours and over holidays. These kinds of activities, suggests ILO, may contribute to children’s development by providing them with skills and experience, and help to prepare them to be productive members of society during their adult life."
       },
       {
-        "id": "3",
+        "id": 3,
         "userId": "3",
         "category": 3,
         "image": "https://image.slidesharecdn.com/atoms-140825094048-phpapp01/95/introduction-to-atomic-energy-and-nuclear-reactors-1-638.jpg?cb=1408959736",
@@ -51,7 +51,7 @@
         "content":"How exactly is energy got from the atom? The atom is the tiniest speck of matter. Each atom has a central core called the nucleus, around which revolve the electrons. The nucleus is built up of two kinds of very minute particles called protons and neutrons. The electron has a negative electrical charge, the proton has an equal positive charge and the neutron has no charge.The nucleus of the radium atom constantly disintegrates ejecting alpha particles which are nuclei of helium atoms. This phenomenon is called radioactivity. Uranium is another radioactive element. In 1938 Hahn and Strassman bombarded uranium with neutrons and found traces of barium in the material"
       },
       {
-        "id": "4",
+        "id": 4,
         "userId": "3",
         "category": 1,
         "image": "https://www.lvusd.org/cms/lib/CA01930645/Centricity/Domain/724/character.png",
@@ -119,7 +119,8 @@
           "github": "92998-3874"
         },
         "phone": "1-770-736-8031 x56442",
-        "website": "hildegard.org"
+        "website": "hildegard.org",
+        "image":"https://cdn0.iconfinder.com/data/icons/avatars-3/512/avatar_beanie_girl-512.png"
       },
       {
         "id": 2,
@@ -133,7 +134,8 @@
           "github": "90566-7771"
         },
         "phone": "010-692-6593 x09125",
-        "website": "anastasia.net"
+        "website": "anastasia.net",
+        "image":"https://thumbs.dreamstime.com/z/vector-illustration-cute-geek-girl-playing-video-game-blond-games-67045352.jpg"
       },
       {
         "id": 3,
@@ -147,7 +149,8 @@
           "github": "59590-4157"
         },
         "phone": "1-463-123-4447",
-        "website": "ramiro.info"
+        "website": "ramiro.info",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTUohuIZeKLSx5OR7Gv0EOqdxX90rQ0SaH23zt62uX-5b1Bn326A"
       }
     ]
   }
