@@ -8,8 +8,9 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Card, Button, Divider } from 'react-native-material-design';
+import BlogItem from '../Components/BlogItem';
 
-
+import { style } from '../Components/Styles/BlogItemStyle';
 
 
 import { blogDetailsHelpers } from './helpers/BlogDetails';
@@ -22,29 +23,30 @@ export default class BlogDetails extends React.Component {
             blog: {},
         }
     }
-    static navigationOptions = {
-        title:  'the blog title from props',
+    static navigationOptions = ({ navigation }) => ({
+        title: ` ${navigation.state.params.blog.title}`,
+    });
+
+    componentWillMount() {
+        // const blog = new blogDetailsHelpers();
+        // blog.getBlogDetails("http://192.168.56.1:3000/data").then(blog => this.setState({ blog }));
+
     }
-
-       componentWillMount() {
-        const blog = new blogDetailsHelpers();
-        blog.getBlogDetails("http://192.168.56.1:3000/data").then(blog=>this.setState({blog}));
-
-    }
-
 
 
     render() {
-        console.log(this.state.blog);
+         const { blog } = this.props.navigation.state.params;
+        console.log(blog);
         return (
             <View>
-                <Card>
-                    <Card.Body>
-                        <Text>Some text to go in the body.</Text>
-                        <Text>Some text to go in the body.</Text>
-                        <Text>Some text to go in the body.</Text>
-                        <Text>Some text to go in the body.</Text>
+                  <Card style={style.card}>
+                    <Card.Media
+                        image={<Image source={{ uri: blog.image }} />}
+                        overlay
+                    />
 
+                    <Card.Body>
+                        <Text style={style.content}>{blog.content}</Text>
                     </Card.Body>
 
                 </Card>

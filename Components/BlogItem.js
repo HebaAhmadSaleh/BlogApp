@@ -14,10 +14,12 @@ import { Card, Button, Divider } from 'react-native-material-design';
 import { style } from './Styles/BlogItemStyle';
 
 export default class BlogItem extends Component {
+
+
     render() {
         const { item } = this.props.blog;
         return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>this.props._onPress(item)}>
                 <Card style={style.card}>
                     <Card.Media
                         image={<Image source={{ uri: item.image }} />}

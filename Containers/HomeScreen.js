@@ -21,10 +21,10 @@ export default class HomeScreen extends React.Component {
         }
     }
 
-    static navigationOptions = {
+    static navigationOptions = ({ navigation }) => ({
+    title: ` ${navigation.state.params.name}`,
+    });
 
-        title: 'Home Page',
-    }
 
     componentWillMount() {
         const { categoryId } = this.props.navigation.state.params;
@@ -37,9 +37,15 @@ export default class HomeScreen extends React.Component {
 
     _renderItem = (blog) => {
         return (
-            <BlogItem blog={blog} />
+            <BlogItem blog={blog} _onPress={this._onPress} />
         )
     }
+
+    _onPress = (item) => {
+        const { navigate } = this.props.navigation;
+        navigate('Blog', { blog: item});
+    }
+
     render() {
         return (
             <FlatList

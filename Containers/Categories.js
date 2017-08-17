@@ -29,7 +29,6 @@ export default class Categories extends Component {
     _keyExtractor = (category) => category.id;
 
     renderCategories = () => {
-       
                if (this.state.categories.length > 0) {
             return (
                 <FlatList
