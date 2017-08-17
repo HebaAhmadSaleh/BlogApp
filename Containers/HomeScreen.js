@@ -13,6 +13,7 @@ import BlogItem from '../Components/BlogItem';
 
 import { blogDetailsHelpers } from './helpers/BlogDetails';
 
+ import { API_URL } from 'react-native-dotenv';
 export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
@@ -29,7 +30,7 @@ export default class HomeScreen extends React.Component {
     componentWillMount() {
         const { categoryId } = this.props.navigation.state.params;
         const blog = new blogDetailsHelpers();
-        blog.getBlogs("http://192.168.56.1:3000/data", categoryId).then(blogs => this.setState({ blogs }));
+        blog.getBlogs(API_URL, categoryId).then(blogs => this.setState({ blogs }));
 
     }
 

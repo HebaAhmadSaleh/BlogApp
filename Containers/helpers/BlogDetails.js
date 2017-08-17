@@ -24,12 +24,13 @@ export class blogDetailsHelpers {
             });
     }
 
-     getBlogs = (url,id) => {
+    getBlogs = (url, id) => {
         return axios.get(url)
             .then((response) => {
                 // the id of the blog will sent as a prop to the component in Navigating
-                let blogs = response.data.blogs.filter((blog) =>  {
-                    return blog.category == id })
+                let blogs = response.data.blogs.filter((blog) => {
+                    return blog.category == id
+                })
                 return blogs;
             }).catch((error) => {
                 console.log(error.message);
@@ -45,12 +46,13 @@ export class blogDetailsHelpers {
             });
     }
 
-     getAuthorByBlogId = (url,id) => {
+    getAuthorByBlogId = (url, id) => {
         return axios.get(url)
             .then((response) => {
                 // the id of the blog will sent as a prop to the component in Navigating
-                let Author = response.data.users.filter((user) =>  {
-                    return user.userId == id })
+                let Author = response.data.users.filter((user) => {
+                    return user.id == id
+                })
                 return Author;
             }).catch((error) => {
                 console.log(error.message);
