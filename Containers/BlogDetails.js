@@ -38,13 +38,18 @@ export default class BlogDetails extends React.Component {
         // blog.getCommentsByBlogId(API_URL, this.props.navigation.state.params.blog.id).then(comment => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
     }
 
+    navigateToAuthorPage = (id = 1) => {
+        const { navigate } = this.props.navigation;
+        navigate('Author', {});
+    }
+
 
     render() {
         const { blog } = this.props.navigation.state.params;
         return (
             <View>
                  <Card style={style.card}>
-                    <TouchableOpacity style={{ alignItems: 'center', padding: 5 }}>
+                    <TouchableOpacity onPress={this.navigateToAuthorPage} style={{ alignItems: 'center', padding: 5 }}>
                         <Image style={{ height: 80, width: 80, borderRadius: 40 }} source={{ uri: this.state.auth_image ? this.state.auth_image : this.state.default }} />
                         <Text> {this.state.auth_name} </Text>
                     </TouchableOpacity>

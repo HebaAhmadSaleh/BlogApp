@@ -10,6 +10,7 @@ import HomeScreen from './Containers/HomeScreen';
 import BlogDetails from './Containers/BlogDetails';
 import Categories from './Containers/Categories';
 import AboutUs from './Containers/AboutUs';
+import Author from './Containers/Author';
 
 import { StackNavigator } from 'react-navigation';
 
@@ -42,9 +43,8 @@ export const SimpleApp = StackNavigator({
     Home: { screen: HomeScreen },
     Blog: { screen: BlogDetails },
     Categories: { screen: Categories },
-    AboutUs: { screen: AboutUs }
-
-
+    AboutUs: { screen: AboutUs },
+    Author: {screen: Author}
 });
 
 
