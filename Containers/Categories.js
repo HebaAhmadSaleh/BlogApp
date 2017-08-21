@@ -9,8 +9,8 @@ import {
     Modal
 } from 'react-native';
 import { API_URL } from 'react-native-dotenv';
+import { getCategories } from '../utils/Api'
 
-import { categoriesHelpers } from './helpers/categories';
 import CategoryItem from '../Components/CategoryItem';
 
 export default class Categories extends Component {
@@ -63,8 +63,7 @@ export default class Categories extends Component {
     }
 
     componentWillMount() {
-        const category = new categoriesHelpers();
-        category.getCategories(API_URL).then((categories) => {
+        getCategories(API_URL).then((categories) => {
             if (categories)
                 this.setState({ categories })
             return;

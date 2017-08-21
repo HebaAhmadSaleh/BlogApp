@@ -17,6 +17,7 @@ import { style } from '../Components/Styles/BlogItemStyle';
 
 
 import { blogDetailsHelpers } from './helpers/BlogDetails';
+import { getAuthorByBlogId } from '../utils/Api'
 
 export default class BlogDetails extends React.Component {
 
@@ -33,8 +34,7 @@ export default class BlogDetails extends React.Component {
     });
 
     componentWillMount() {
-        const blog = new blogDetailsHelpers();
-        blog.getAuthorByBlogId(API_URL, this.props.navigation.state.params.blog.userId).then(author => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
+        getAuthorByBlogId(API_URL, this.props.navigation.state.params.blog.userId).then(author => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
         // blog.getCommentsByBlogId(API_URL, this.props.navigation.state.params.blog.id).then(comment => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
     }
 

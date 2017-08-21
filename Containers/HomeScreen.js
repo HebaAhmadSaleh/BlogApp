@@ -11,10 +11,10 @@ import { StackNavigator } from 'react-navigation';
 import { Card, Button, Divider } from 'react-native-material-design';
 import BlogItem from '../Components/BlogItem';
 
-import { blogDetailsHelpers } from './helpers/BlogDetails';
 import { SideMenu, List, ListItem } from 'react-native-elements'
 
 import { API_URL } from 'react-native-dotenv';
+import { getAuthorByBlogId } from '../utils/Api'
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
@@ -50,8 +50,7 @@ export default class HomeScreen extends React.Component {
 
     componentWillMount() {
         const { categoryId } = this.props.navigation.state.params ? this.props.navigation.state.params : 0 ;
-        const blog = new blogDetailsHelpers();
-        blog.getBlogs(API_URL, categoryId).then(blogs => this.setState({ blogs }));
+        getBlogs(API_URL, categoryId).then(blogs => this.setState({ blogs }));
     }
 
 
