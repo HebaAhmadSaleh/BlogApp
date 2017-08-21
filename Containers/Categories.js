@@ -72,8 +72,10 @@ export default class Categories extends Component {
 
     }
     render() {
-   return(<View>
-       { this.renderCategories()}
-       </View>)
-}
+        return(
+            <View>
+                { this.renderCategories()}
+            </View>
+       )
+    }
 }

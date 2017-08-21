@@ -14,7 +14,7 @@ import BlogItem from '../Components/BlogItem';
 import { blogDetailsHelpers } from './helpers/BlogDetails';
 import { SideMenu, List, ListItem } from 'react-native-elements'
 
- import { API_URL } from 'react-native-dotenv';
+import { API_URL } from 'react-native-dotenv';
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
@@ -70,7 +70,7 @@ export default class HomeScreen extends React.Component {
 
     _navigate = (toScreen) => {
         const { navigate } = this.props.navigation;
-          navigate(toScreen); 
+          navigate(toScreen);
 
     }
     onSideMenuChange = (isOpen) => {
