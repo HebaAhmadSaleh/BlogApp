@@ -2,8 +2,8 @@ import axios from 'axios';
 
 function getBlogDetails(url) {
     return axios.get(url)
-        .then((response) => {
-            let blog = response.data.blogs.filter(blog => parseInt(blog.id) == 1);
+        .then(({data}) => {
+            let blog = data.blogs.filter(blog => parseInt(blog.id) == 1);
             return blog;
         }).catch((error) => {
             handleError(error);
@@ -12,14 +12,14 @@ function getBlogDetails(url) {
 
 function getBlogs(url, id) {
     return axios.get(url)
-        .then(({response}) => {
+        .then(({data}) => {
             let blogs;
             if (id) {
-                blogs = response.data.blogs.filter((blog) => {
+                blogs = data.blogs.filter((blog) => {
                     return blog.category == id;
                 })
             } else {
-                blogs = response.data.blogs;
+                blogs = data.blogs;
             }
             return blogs;
         }).catch((error) => {
@@ -29,9 +29,9 @@ function getBlogs(url, id) {
 
 function getAuthorByBlogId(url, id) {
     return axios.get(url)
-        .then((response) => {
+        .then(({data}) => {
             // the id of the blog will sent as a prop to the component in Navigating
-            let Author = response.data.users.filter((user) => {
+            let Author = data.users.filter((user) => {
                 return user.id == id
             })
             return Author;
@@ -42,8 +42,8 @@ function getAuthorByBlogId(url, id) {
 
 function getCommentsByBlogId(url, id) {
     return axios.get(url)
-        .then((response) => {
-            let comment = response.data.comments.filter((blog) => {
+        .then(({data}) => {
+            let comment = data.comments.filter((blog) => {
                 return blog.postId == id
             })
             return comment;
@@ -54,8 +54,8 @@ function getCommentsByBlogId(url, id) {
 
 function getCategories(url) {
     return axios.get(url)
-        .then((response) => {
-            return response.data.categories;
+        .then(({data}) => {
+            return data.categories;
         }).catch((error) => {
             handleError(error);
         });
