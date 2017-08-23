@@ -15,11 +15,12 @@ function getBlogs(url, id) {
         .then(({data}) => {
             let blogs;
             if (id) {
-                blogs = data.blogs.filter((blog) => {
+                blogs = data.data.blogs.filter((blog) => {
                     return blog.category == id;
                 })
             } else {
-                blogs = data.blogs;
+            blogs = data.data.blogs;
+            console.log(blogs)
             }
             return blogs;
         }).catch((error) => {
@@ -31,7 +32,7 @@ function getAuthorByBlogId(url, id) {
     return axios.get(url)
         .then(({data}) => {
             // the id of the blog will sent as a prop to the component in Navigating
-            let Author = data.users.filter((user) => {
+            let Author = data.data.users.filter((user) => {
                 return user.id == id
             })
             return Author;

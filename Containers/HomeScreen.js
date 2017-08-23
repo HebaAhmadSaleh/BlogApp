@@ -11,10 +11,10 @@ import { StackNavigator } from 'react-navigation';
 import { Card, Button, Divider } from 'react-native-material-design';
 import BlogItem from '../Components/BlogItem';
 
-import { SideMenu, List, ListItem } from 'react-native-elements'
-
+import { SideMenu, List, ListItem } from 'react-native-elements';
+import HeaderMenu from '../Components/HeaderMenu';
 import { API_URL } from 'react-native-dotenv';
-import { getAuthorByBlogId } from '../utils/Api'
+import { getAuthorByBlogId, getBlogs } from '../utils/Api'
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
@@ -22,23 +22,7 @@ export default class HomeScreen extends React.Component {
         this.state = {
             blogs: {},
             isOpen: false,
-            Menulist : [{
-                title: 'Categories',
-                screen:"Categories"
-            },
-            {
-                title: 'Home',
-                screen: 'Home',
-            },
-            {
-                title:'About Us',
-                screen:"AboutUs"
-            }
-            ]
         }
-    this.toggleSideMenu = this.toggleSideMenu.bind(this);
-
-
     }
 
     static navigationOptions = ({ navigation }) => ({
@@ -49,8 +33,8 @@ export default class HomeScreen extends React.Component {
 
 
     componentWillMount() {
-        const { categoryId } = this.props.navigation.state.params ? this.props.navigation.state.params : 0 ;
-        getBlogs(API_URL, categoryId).then(blogs => this.setState({ blogs }));
+       // const { categoryId } = this.props.navigation.state.params ? this.props.navigation.state.params : 0 ;
+        getBlogs(API_URL).then(blogs => this.setState({ blogs }));
     }
 
 
@@ -67,50 +51,16 @@ export default class HomeScreen extends React.Component {
         navigate('Blog', { blog: item});
     }
 
-    _navigate = (toScreen) => {
-        const { navigate } = this.props.navigation;
-          navigate(toScreen);
-
-    }
-    onSideMenuChange = (isOpen) => {
-    this.setState({
-        isOpen: isOpen
-    })
-    };
-
-    toggleSideMenu = () => {
-    this.setState({
-        isOpen: !this.state.isOpen
-    })
-    }
-    MenuComponent = () => {return(
-        <View style={{flex: 1, backgroundColor: '#ededed'}}>
-        <List containerStyle={{marginTop: 0}}>
-        {
-            this.state.Menulist.map((item, i) => (
-                <ListItem
-                    key={i}
-                    title={item.title}
-                    onPress ={()=>this._navigate(item.screen)}
-                />
-                ))
-        }
-        </List>
-        </View>
-    )};
-
     render() {
         return (
-             <SideMenu
-      isOpen={this.state.isOpen}
-      onChange={this.onSideMenuChange.bind(this)}
-      menu={this.MenuComponent()}>
-            <FlatList
-                data={this.state.blogs}
-                keyExtractor={this._keyExtractor}
-                renderItem={this._renderItem}
-            />
-            </SideMenu>
+            <View style={{flex:1}}>
+                <HeaderMenu/>
+                <FlatList
+                    data={this.state.blogs}
+                    keyExtractor={this._keyExtractor}
+                    renderItem={this._renderItem}
+                />
+            </View>
         );
     }
 }
