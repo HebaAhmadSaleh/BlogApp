@@ -34,7 +34,8 @@ export default class HomeScreen extends React.Component {
 
     componentWillMount() {
        // const { categoryId } = this.props.navigation.state.params ? this.props.navigation.state.params : 0 ;
-        getBlogs(API_URL).then(blogs => this.setState({ blogs }));
+        getBlogs().then((blogs) => {
+            this.setState({ blogs })});
     }
 
 

@@ -11,6 +11,7 @@
     "axios": "^0.16.2",
     "react": "16.0.0-alpha.12",
     "react-native": "0.47.1",
+    "react-native-drawer-menu": "^0.2.4",
     "react-native-elements": "^0.15.0",
     "react-native-material-design": "^0.3.7",
     "react-native-side-menu": "^1.0.2",

@@ -11,13 +11,13 @@ import { StackNavigator } from 'react-navigation';
 import { Card, Button, Divider, Avatar } from 'react-native-material-design';
 
 import BlogItem from '../Components/BlogItem';
+import {CommentList} from '../Containers/CommentList';
 
 import { style } from '../Components/Styles/BlogItemStyle';
- import { API_URL } from 'react-native-dotenv';
 
 
 import { blogDetailsHelpers } from './helpers/BlogDetails';
-import { getAuthorByBlogId } from '../utils/Api'
+import { getAuthorByBlogId, getCommentsByBlogId } from '../utils/Api'
 
 export default class BlogDetails extends React.Component {
 
@@ -26,16 +26,17 @@ export default class BlogDetails extends React.Component {
         this.state = {
             auth_name: "",
             auth_image: "",
-            default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5G-D-qhtvJp1VbU-fejA9nZ2NT93TOGJiDqOIT_yJbb2c6wLgDQ"
-        }
+            default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5G-D-qhtvJp1VbU-fejA9nZ2NT93TOGJiDqOIT_yJbb2c6wLgDQ",
+            comments:[]
+                }
     }
     static navigationOptions = ({ navigation }) => ({
         title: ` ${navigation.state.params.blog.title}`,
     });
 
     componentWillMount() {
-        getAuthorByBlogId(API_URL, this.props.navigation.state.params.blog.userId).then(author => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
-        // blog.getCommentsByBlogId(API_URL, this.props.navigation.state.params.blog.id).then(comment => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
+        getAuthorByBlogId(this.props.navigation.state.params.blog.userId).then(author => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
+        getCommentsByBlogId(this.props.navigation.state.params.blog.id).then(comments => this.setState({ comments }));
     }
 
     navigateToAuthorPage = (id = 1) => {
@@ -45,9 +46,10 @@ export default class BlogDetails extends React.Component {
 
 
     render() {
+        console.log('x',this.state.comments);
         const { blog } = this.props.navigation.state.params;
         return (
-            <View>
+            <ScrollView>
                  <Card style={style.card}>
                     <TouchableOpacity onPress={this.navigateToAuthorPage} style={{ alignItems: 'center', padding: 5 }}>
                         <Image style={{ height: 80, width: 80, borderRadius: 40 }} source={{ uri: this.state.auth_image ? this.state.auth_image : this.state.default }} />
@@ -58,7 +60,8 @@ export default class BlogDetails extends React.Component {
                     </Card.Body>
 
                 </Card>
-            </View>
+                <CommentList comments={this.state.comments} />
+            </ScrollView>
         );
     }
 
