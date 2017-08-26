@@ -12,7 +12,7 @@ import Categories from './Containers/Categories';
 import AboutUs from './Containers/AboutUs';
 import Author from './Containers/Author';
 
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator,TabNavigator } from 'react-navigation';
 
 import Icon from 'react-native-vector-icons/dist/SimpleLineIcons';
 import blogIcon from './Images/blogger-5-512.png';
@@ -53,9 +53,9 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        // backgroundColor: '#8DC63F',
+         backgroundColor: '#81C341',
         // backgroundColor: '#FF7D00',
-        backgroundColor: '#00aaaa',
+       // backgroundColor: '#00aaaa',
         //opacity:0.2
     },
     logo: {

@@ -55,7 +55,7 @@ function getCommentsByBlogId(id) {
     return axios.get(API_URL)
         .then(({ data }) => {
                         console.log(data);
-            let comments = data.commets.filter((blog) => {
+            let comments = data.comments.filter((blog) => {
                 return blog.postId == id
             })
             return comments;
