@@ -16,7 +16,7 @@ import CategoryItem from '../Components/CategoryItem';
 export default class Categories extends Component {
 
     static navigationOptions = {
-        header: null,
+        title: 'Categories',
     }
 
     constructor(props) {
@@ -36,6 +36,8 @@ export default class Categories extends Component {
                     data={this.state.categories}
                     keyExtractor={this._keyExtractor}
                     renderItem={this._renderItem}
+                    numColumns='2'
+                    horizontal={false}
                 />
             );
         }
@@ -72,7 +74,7 @@ export default class Categories extends Component {
     }
     render() {
         return(
-            <View>
+            <View style={{alignItems:'center'}}>
                 { this.renderCategories()}
             </View>
        )

@@ -61,7 +61,9 @@ export default class BlogList extends React.Component {
 
     checkLoading = () => {
         if (this.state.loading)
-            return (<ActivityIndicator size='large' color='red' />)
+            return (<View style={{alignItems:'center',justifyContent:'center'}}>
+                <ActivityIndicator size='large' color='#81C341' />
+                </View>)
     }
     render() {
         return (

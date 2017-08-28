@@ -114,9 +114,7 @@ export default class BlogDetails extends React.Component {
                                 onChangeText={this.setComment}
                                 placeholder="write something ..."
                                 style={style.textInput} />
-                            <TouchableOpacity style={style.buttonStyle} onPress={() => {
-                                this._addComment()
-                            }}>
+                            <TouchableOpacity style={style.buttonStyle} onPress={this._addComment}>
                                 <Text style={{ color: "white", fontSize: 20 }}>
                                     Add Comment
                     </Text>

@@ -57,7 +57,7 @@ export default class HomeScreen extends React.Component {
 
     checkLoading = () => {
         if (this.state.loading)
-            return (<ActivityIndicator size='large' color='red' />)
+            return (<ActivityIndicator size='large' color='#81C341' />)
     }
     render() {
         return (

@@ -1,25 +1,29 @@
 {
   "categories": [
-    {
-      "id": "1",
-      "name": "raising",
-      "image": "https://thoughtcatalog.files.wordpress.com/2014/02/shutterstock_100800745.jpg?w=584&h=394"
-    },
-    {
-      "id": "2",
-      "name": "Technology",
-      "image": "https://janzz.technology/wp-content/uploads/2014/07/janzz_technology_welcome.jpg"
-    },
-    {
-      "id": "3",
-      "name": "Scientific",
-      "image": "http://www.braintreehighnews.com/wp-content/uploads/2014/02/Science.jpg"
-    },
-    {
-      "id": "4",
-      "name": "Social Problems",
-      "image": "http://edynamiclearning.com/wp-content/uploads/2014/04/300dpi_social_problems_I_t_sm-695x530.jpg"
-    }
+     {
+    "id": "1",
+    "name": "raising",
+    "image": "http://nlyouth.ca/images/hands.png",
+    "color": "#ea2"
+  },
+  {
+    "id": "2",
+    "name": "Technology",
+    "image": "http://www.pngall.com/wp-content/uploads/2016/07/Technology.png",
+     "color": "#fca"
+  },
+  {
+    "id": "3",
+    "name": "Scientific",
+    "image": "http://icons.iconarchive.com/icons/iconshock/real-vista-education/256/laboratory-icon.png",
+    "color": "#81C341"
+  },
+  {
+    "id": "4",
+    "name": "Social Problems",
+    "image": "http://www.freeiconspng.com/uploads/error-icon-32.png",
+    "color": "#1bb"
+  }
   ],
   "blogs": [
     {
