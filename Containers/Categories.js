@@ -59,7 +59,7 @@ export default class Categories extends Component {
 
     navigateToCategory = (id, name) => {
         const { navigate } = this.props.navigation;
-        navigate('Home', { categoryId: id, name });
+        navigate('myBloglist', { categoryId: id, name });
     }
 
     componentWillMount() {

@@ -15,9 +15,9 @@ import BlogItem from '../Components/BlogItem';
 import { SideMenu, List, ListItem } from 'react-native-elements';
 import HeaderMenu from '../Components/HeaderMenu';
 import { API_URL } from 'react-native-dotenv';
-import { getAuthorByBlogId, getBlogs } from '../utils/Api'
+import { getAuthorByBlogId, getBlogsbyId } from '../utils/Api'
 
-export default class HomeScreen extends React.Component {
+export default class BlogList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,17 +27,21 @@ export default class HomeScreen extends React.Component {
         }
     }
 
-    static navigationOptions = ({ navigation }) => ({
-        header: null,
+   static navigationOptions = ({ navigation }) => ({
+        title: navigation.state.params.name
     });
 
 
     componentWillMount() {
-        this.getALlBlogs();
+         const { categoryId } = this.props.navigation.state.params ? this.props.navigation.state.params : 0 ;
+                getBlogsbyId(categoryId).then((blogs) => {
+            this.setState({ blogs });
+            this.setState({ loading: false })
+        })
     }
 
-    getALlBlogs(){
-        getBlogs().then((blogs) => {
+    getALlBlogs(id){
+        getBlogsbyId(id).then((blogs) => {
             this.setState({ blogs });
             this.setState({ loading: false })
         })

@@ -6,7 +6,7 @@ export const style = StyleSheet.create({
 cardTitle:{
     fontWeight:'bold',
     fontSize:16,
-    color:'#00aaaa',
+    color:'#81C341',
     margin:5
 },
 card:{

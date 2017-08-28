@@ -16,15 +16,15 @@ export default class CategoryItem extends Component {
     render() {
         const { item } = this.props.category;
         return (
-            <TouchableOpacity onPress={()=>this.props.onPress(item.id,item.name)}>
-                 <Card style={style.card}>
+            <TouchableOpacity onPress={()=>this.props.onPress(item.id,item.name)} style={style.category}>
+                 {/* <Card style={style.card}>
                      <Card.Media
                         image={<Image source={{ uri: item.image }} />}
                         overlay
                     />
                     <Text style={style.cardTitle}>{item.name}</Text>
                 </Card>
-                <Divider />
+                <Divider /> */}
             </TouchableOpacity>
         );
     }
