@@ -83,10 +83,35 @@ function handleError(error) {
     return null;
 }
 
+function getBlogsByAuthor(id) {
+    return axios.get(API_URL)
+        .then(({ data }) => {
+
+            let blogs = data.blogs.filter((blog) => {
+                return blog.id == id
+            })
+            return blogs;
+        }).catch((error) => {
+            handleError(error);
+        });
+}
+function getAuthorInfo(id) {
+    return axios.get(API_URL)
+        .then(({ data }) => {
+            let author = data.users.filter((user) => {
+                return user.id == id
+            })
+            return author;
+        }).catch((error) => {
+            handleError(error);
+        });
+}
 export {
     getBlogDetails,
     getBlogs,
     getAuthorByBlogId,
     getCommentsByBlogId,
-    getCategories
+    getCategories,
+    getBlogsByAuthor,
+    getAuthorInfo
 };
