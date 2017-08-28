@@ -25,6 +25,7 @@ export default class BlogDetails extends React.Component {
         super(props);
         this.state = {
             auth_name: "",
+            auth_id: "",
             auth_image: "",
             default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5G-D-qhtvJp1VbU-fejA9nZ2NT93TOGJiDqOIT_yJbb2c6wLgDQ",
             comments:[]
@@ -35,13 +36,17 @@ export default class BlogDetails extends React.Component {
     });
 
     componentWillMount() {
-        getAuthorByBlogId(this.props.navigation.state.params.blog.userId).then(author => this.setState({ auth_name: author[0].username, auth_image: author[0].image }));
+        getAuthorByBlogId(this.props.navigation.state.params.blog.userId).then(author => this.setState({auth_id: author[0].id, auth_name: author[0].username, auth_image: author[0].image }));
         getCommentsByBlogId(this.props.navigation.state.params.blog.id).then(comments => this.setState({ comments }));
     }
 
     navigateToAuthorPage = (id = 1) => {
         const { navigate } = this.props.navigation;
-        navigate('Author', {});
+        navigate('Author', {
+            auth_id: this.state.auth_id,
+            auth_name: this.state.auth_name,
+            auth_image: this.state.auth_image
+        });
     }
 
 
