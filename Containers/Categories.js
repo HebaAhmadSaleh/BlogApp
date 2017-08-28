@@ -16,7 +16,7 @@ import CategoryItem from '../Components/CategoryItem';
 export default class Categories extends Component {
 
     static navigationOptions = {
-        header: null,
+        title: 'Categories',
     }
 
     constructor(props) {
@@ -26,27 +26,32 @@ export default class Categories extends Component {
         }
     }
 
+    checkLoading = () => {
+        if (this.state.loading)
+            return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <ActivityIndicator size='large' color='#81C341' /></View>)
+    }
+
 
     _keyExtractor = (category) => category.id;
 
     renderCategories = () => {
-               if (this.state.categories.length > 0) {
+        if (this.state.categories.length > 0) {
             return (
                 <FlatList
                     data={this.state.categories}
                     keyExtractor={this._keyExtractor}
                     renderItem={this._renderItem}
+                    numColumns='2'
+                    horizontal={false}
                 />
             );
         }
         else {
             return (
-                    <View style={{ marginTop: 22 }}>
-                        <View>
-                            <Text> Please Run data file.</Text>
-
-                        </View>
-                    </View>
+                <View style={{ marginTop: 22 }}>
+                   {this.checkLoading()}
+                </View>
             );
         }
     }
@@ -59,7 +64,7 @@ export default class Categories extends Component {
 
     navigateToCategory = (id, name) => {
         const { navigate } = this.props.navigation;
-        navigate('Home', { categoryId: id, name });
+        navigate('myBloglist', { categoryId: id, name });
     }
 
     componentWillMount() {
@@ -71,10 +76,10 @@ export default class Categories extends Component {
 
     }
     render() {
-        return(
-            <View>
-                { this.renderCategories()}
+        return (
+            <View style={{ alignItems: 'center' }}>
+                {this.renderCategories()}
             </View>
-       )
+        )
     }
 }

@@ -5,7 +5,8 @@ import {
     AppRegistry,
     Text,
     ScrollView,
-    FlatList
+    FlatList,
+    ActivityIndicator
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Card, Button, Divider } from 'react-native-material-design';
@@ -22,23 +23,25 @@ export default class HomeScreen extends React.Component {
         this.state = {
             blogs: {},
             isOpen: false,
+            loading: true,
         }
     }
 
     static navigationOptions = ({ navigation }) => ({
-        header:   null ,
-        tabBarLabel: 'Home',
-        //title:   this.props.navigation.state.params ?` ${navigation.state.params.name}` : ''
+        header: null,
     });
 
 
     componentWillMount() {
-       // const { categoryId } = this.props.navigation.state.params ? this.props.navigation.state.params : 0 ;
-        getBlogs().then((blogs) => {
-            this.setState({ blogs })});
+        this.getALlBlogs();
     }
 
-
+    getALlBlogs() {
+        getBlogs().then((blogs) => {
+            this.setState({ blogs });
+            this.setState({ loading: false })
+        })
+    }
     _keyExtractor = blog => blog.id;
 
     _renderItem = (blog) => {
@@ -49,13 +52,17 @@ export default class HomeScreen extends React.Component {
 
     _onPress = (item) => {
         const { navigate } = this.props.navigation;
-        navigate('Blog', { blog: item});
+        navigate('Blog', { blog: item });
     }
 
+    checkLoading = () => {
+        if (this.state.loading)
+            return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}><ActivityIndicator size='large' color='#81C341' /></View>)
+    }
     render() {
         return (
-            <View style={{flex:1}}>
-                <HeaderMenu/>
+            <View style={{ flex: 1 }}>
+                {this.checkLoading()}
                 <FlatList
                     data={this.state.blogs}
                     keyExtractor={this._keyExtractor}

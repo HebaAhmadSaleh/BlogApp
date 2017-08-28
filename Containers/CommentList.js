@@ -23,7 +23,7 @@ export class CommentList extends React.Component {
                 <Avatar
                     small
                     rounded
-                    source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg" }}
+                    source={{ uri: comment.item.image}}
                     onPress={() => console.log("Works!")}
                     activeOpacity={0.7}
                 />
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     },
     name: {
         fontWeight: 'bold',
+        color:'#81C341'
     },
     created: {
         color: '#BBB',
