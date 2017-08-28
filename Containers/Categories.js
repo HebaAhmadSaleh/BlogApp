@@ -26,11 +26,17 @@ export default class Categories extends Component {
         }
     }
 
+    checkLoading = () => {
+        if (this.state.loading)
+            return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <ActivityIndicator size='large' color='#81C341' /></View>)
+    }
+
 
     _keyExtractor = (category) => category.id;
 
     renderCategories = () => {
-               if (this.state.categories.length > 0) {
+        if (this.state.categories.length > 0) {
             return (
                 <FlatList
                     data={this.state.categories}
@@ -43,12 +49,9 @@ export default class Categories extends Component {
         }
         else {
             return (
-                    <View style={{ marginTop: 22 }}>
-                        <View>
-                            <Text> Please Run data file.</Text>
-
-                        </View>
-                    </View>
+                <View style={{ marginTop: 22 }}>
+                   {this.checkLoading()}
+                </View>
             );
         }
     }
@@ -73,10 +76,10 @@ export default class Categories extends Component {
 
     }
     render() {
-        return(
-            <View style={{alignItems:'center'}}>
-                { this.renderCategories()}
+        return (
+            <View style={{ alignItems: 'center' }}>
+                {this.renderCategories()}
             </View>
-       )
+        )
     }
 }

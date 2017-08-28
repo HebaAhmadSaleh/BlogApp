@@ -36,7 +36,7 @@ export default class HomeScreen extends React.Component {
         this.getALlBlogs();
     }
 
-    getALlBlogs(){
+    getALlBlogs() {
         getBlogs().then((blogs) => {
             this.setState({ blogs });
             this.setState({ loading: false })
@@ -57,14 +57,12 @@ export default class HomeScreen extends React.Component {
 
     checkLoading = () => {
         if (this.state.loading)
-            return (<ActivityIndicator size='large' color='#81C341' />)
+            return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}><ActivityIndicator size='large' color='#81C341' /></View>)
     }
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <View style={{alignItems:'center',justifyContent:'center'}}>
                 {this.checkLoading()}
-                </View>
                 <FlatList
                     data={this.state.blogs}
                     keyExtractor={this._keyExtractor}
