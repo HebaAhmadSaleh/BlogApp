@@ -1,5 +1,5 @@
 import axios from 'axios';
- import { API_URL } from 'react-native-dotenv';
+import { API_URL } from 'react-native-dotenv';
 
 function getBlogDetails(API_URL) {
     return axios.get(API_URL)
@@ -12,19 +12,21 @@ function getBlogDetails(API_URL) {
 }
 
 function getBlogs() {
-    return axios.get(API_URL)
-        .then(({ data }) => {
+    let url = API_URL + '/blogs';
+    return axios.get(url)
+        .then((response) => {
+            console.log(response)
             let blogs;
-            blogs = data.blogs;
-            console.log(blogs)
+            blogs = response.data;
             return blogs;
         }).catch((error) => {
             handleError(error);
         });
 }
 
-function getBlogsbyId( id) {
-    return axios.get(API_URL)
+function getBlogsbyId(id) {
+    let url = API_URL + '/blogs';
+    return axios.get(url)
         .then(({ data }) => {
             let blogs;
             if (id) {
@@ -39,10 +41,11 @@ function getBlogsbyId( id) {
 }
 
 function getAuthorByBlogId(id) {
-    return axios.get(API_URL)
+    let url = API_URL + '/users';
+    return axios.get(url)
         .then(({ data }) => {
 
-            let Author = data.users.filter((user) => {
+            let Author = data.filter((user) => {
                 return user.id == id
             })
             return Author;
@@ -52,11 +55,12 @@ function getAuthorByBlogId(id) {
 }
 
 function getCommentsByBlogId(id) {
-    return axios.get(API_URL)
+    let url = API_URL + '/comments';
+    return axios.get(url)
         .then(({ data }) => {
-                        console.log(data);
-            let comments = data.comments.filter((blog) => {
-                return blog.postId == id
+            console.log(data);
+            let comments = data.filter((comment) => {
+                return comment.postId == id
             })
             return comments;
         }).catch((error) => {
@@ -65,9 +69,29 @@ function getCommentsByBlogId(id) {
 }
 
 function getCategories() {
-    return axios.get(API_URL)
+    let url = API_URL + '/categories';
+    return axios.get(url)
         .then(({ data }) => {
-            return data.categories;
+            return data;
+        }).catch((error) => {
+            handleError(error);
+        });
+}
+
+addComment = (id, name, comment) => {
+
+    let new_comment = {
+        id: Math.random(),
+        postId: id,
+        image: 'http://www.sessionlogs.com/media/icons/defaultIcon.png',
+        email: 'blaa@bla.com',
+        name: name,
+        body: comment
+    }
+    let url = API_URL + '/comments';
+    return axios.post(url, new_comment)
+        .then((response) => {
+            console.log(response)
         }).catch((error) => {
             handleError(error);
         });
@@ -90,5 +114,6 @@ export {
     getBlogs,
     getAuthorByBlogId,
     getCommentsByBlogId,
-    getCategories
+    getCategories,
+    addComment
 };

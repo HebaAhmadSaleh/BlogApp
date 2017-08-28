@@ -21,7 +21,7 @@ import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 
 import { blogDetailsHelpers } from './helpers/BlogDetails';
-import { getAuthorByBlogId, getCommentsByBlogId } from '../utils/Api'
+import { getAuthorByBlogId, getCommentsByBlogId, addComment } from '../utils/Api'
 
 export default class BlogDetails extends React.Component {
 
@@ -33,6 +33,8 @@ export default class BlogDetails extends React.Component {
             default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5G-D-qhtvJp1VbU-fejA9nZ2NT93TOGJiDqOIT_yJbb2c6wLgDQ",
             comments: [],
             modalVisible: false,
+            name: "",
+            comment: ""
         }
     }
     static navigationOptions = ({ navigation }) => ({
@@ -44,52 +46,87 @@ export default class BlogDetails extends React.Component {
         getCommentsByBlogId(this.props.navigation.state.params.blog.id).then(comments => this.setState({ comments }));
     }
 
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps)
+    }
+
     navigateToAuthorPage = (id = 1) => {
         const { navigate } = this.props.navigation;
         navigate('Author', {});
     }
 
-    setModalVisible =(visible) =>{
+    setModalVisible = (visible) => {
         this.setState({ modalVisible: visible });
     }
 
-    setComment = (comment) =>{
-        console.log(comment);
+    setName = (name) => {
+        this.setState({ name })
     }
-    setName = (name) =>{
-        console.log(name);
+
+    setComment = (comment) => {
+        this.setState({ comment })
+    }
+    _addComment = () => {
+        let postId = this.props.navigation.state.params.blog.id;
+        if (this.state.name && this.state.comment) {
+            addComment(postId, this.state.name, this.state.comment).then(() => {
+                this.setState({ name: "" });
+                this.setState({ comment: "" });
+                this.setState({ modalVisible: false });
+                getCommentsByBlogId(this.props.navigation.state.params.blog.id).then(comments => this.setState({ comments }));
+
+            });
+        }
+        else{
+        alert("PLease fill the data.");
+        }
     }
     renderModal() {
         return (
+            <View style={{ marginTop: 22, backgroundColor: 'green' }}>
                 <Modal
-                    animationType={"slide"}
                     transparent={false}
                     visible={this.state.modalVisible}
                     onRequestClose={() => { alert("Modal has been closed.") }}
-                    style={{height:100}}
+                    style={{ height: 100 }}
                 >
-                    <View style={{ marginTop: 22, backgroundColor:'green' }}>
-                        <View>
-                            <TextInput
-                             borderBottomColor="transparent"
-                              onChangeText={this.setName}
-                              placeholder="your name"/>
-                             <TextInput
-                             borderBottomColor="transparent"
-                              onChangeText={this.setComment}
-                             placeholder="write something ..."/>
-
-                            <TouchableHighlight onPress={() => {
+                    <View>
+                        <View style={{ flexDirection: 'row' }}>
+                            <View style={{ flex: 1 }} />
+                            <TouchableOpacity onPress={() => {
                                 this.setModalVisible(!this.state.modalVisible)
                             }}>
-                                <Icon name="close" style={{fontSize:20,position:'absolute'
-                                ,top:10}} />
-                            </TouchableHighlight>
-
+                                <Icon name="close" style={{
+                                    fontSize: 30,
+                                    margin: 10,
+                                    color: '#81C341'
+                                }} />
+                            </TouchableOpacity>
                         </View>
+                        <View style={{ alignItems: 'center' }} >
+                            <TextInput
+                                borderBottomColor="transparent"
+                                onChangeText={this.setName}
+                                placeholder="your name"
+                                style={style.textInput} />
+                            <TextInput
+                                borderBottomColor="transparent"
+                                onChangeText={this.setComment}
+                                placeholder="write something ..."
+                                style={style.textInput} />
+                            <TouchableOpacity style={style.buttonStyle} onPress={() => {
+                                this._addComment()
+                            }}>
+                                <Text style={{ color: "white", fontSize: 20 }}>
+                                    Add Comment
+                    </Text>
+                            </TouchableOpacity>
+                        </View>
+
                     </View>
                 </Modal>
-          
+            </View>
+
         )
     }
 
@@ -108,12 +145,10 @@ export default class BlogDetails extends React.Component {
 
                 </View>
                 <CommentList comments={this.state.comments} />
-                <TouchableOpacity style={{
-                    padding: 10, alignSelf: 'stretch', margin: 10, alignItems: 'center',
-                    justifyContent: 'center', backgroundColor: '#81C341'
-                }} onPress={() => {
-          this.setModalVisible(!this.state.modalVisible)
-        }}>
+                <TouchableOpacity style={style.buttonStyle}
+                    onPress={() => {
+                        this.setModalVisible(!this.state.modalVisible)
+                    }}>
                     <Text style={{ color: "white", fontSize: 20 }}>
                         Add Comment
                     </Text>
@@ -124,3 +159,4 @@ export default class BlogDetails extends React.Component {
     }
 
 }
+
