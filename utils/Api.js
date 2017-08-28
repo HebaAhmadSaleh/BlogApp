@@ -16,7 +16,6 @@ function getBlogs() {
         .then(({ data }) => {
             let blogs;
             blogs = data.blogs;
-            console.log(blogs)
             return blogs;
         }).catch((error) => {
             handleError(error);
@@ -54,7 +53,6 @@ function getAuthorByBlogId(id) {
 function getCommentsByBlogId(id) {
     return axios.get(API_URL)
         .then(({ data }) => {
-                        console.log(data);
             let comments = data.commets.filter((blog) => {
                 return blog.postId == id
             })

@@ -46,7 +46,6 @@ export default class BlogDetails extends React.Component {
 
 
     render() {
-        console.log('x',this.state.comments);
         const { blog } = this.props.navigation.state.params;
         return (
             <ScrollView>
