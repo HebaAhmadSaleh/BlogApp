@@ -1,29 +1,41 @@
 {
   "categories": [
-     {
-    "id": "1",
-    "name": "raising",
-    "image": "http://nlyouth.ca/images/hands.png",
-    "color": "#ea2"
-  },
-  {
-    "id": "2",
-    "name": "Technology",
-    "image": "http://www.pngall.com/wp-content/uploads/2016/07/Technology.png",
-     "color": "#fca"
-  },
-  {
-    "id": "3",
-    "name": "Scientific",
-    "image": "http://icons.iconarchive.com/icons/iconshock/real-vista-education/256/laboratory-icon.png",
-    "color": "#81C341"
-  },
-  {
-    "id": "4",
-    "name": "Social Problems",
-    "image": "http://www.freeiconspng.com/uploads/error-icon-32.png",
-    "color": "#1bb"
-  }
+    {
+      "id": "1",
+      "name": "raising",
+      "image": "http://nlyouth.ca/images/hands.png",
+      "color": "#ea2"
+    },
+    {
+      "id": "2",
+      "name": "Technology",
+      "image": "http://www.pngall.com/wp-content/uploads/2016/07/Technology.png",
+      "color": "#fca"
+    },
+    {
+      "id": "3",
+      "name": "Scientific",
+      "image": "http://icons.iconarchive.com/icons/iconshock/real-vista-education/256/laboratory-icon.png",
+      "color": "#81C341"
+    },
+    {
+      "id": "4",
+      "name": "Social Problems",
+      "image": "http://www.freeiconspng.com/uploads/error-icon-32.png",
+      "color": "#1bb"
+    },
+    {
+      "id": "5",
+      "name": "Scientific",
+      "image": "http://www.freeiconspng.com/uploads/history-icon-png-32.png",
+      "color": "#009688"
+    },
+    {
+      "id": "6",
+      "name": "Social Problems",
+      "image": "https://d30y9cdsu7xlg0.cloudfront.net/png/337564-200.png",
+      "color": "#E91E63"
+    }
   ],
   "blogs": [
     {
@@ -41,7 +53,7 @@
       "image": "https://borgenproject.org/wp-content/uploads/Child-Labor-in-Vietnam.jpg",
       "category": 4,
       "title": "Child labour",
-      "body": "The term ‘child labour’, as defined by International Labour Organization (ILO), is the work that deprives children of their childhood, their potential and their dignity, and that is harmful to physical and mental development. It refers to work that is mentally, physically, socially or morally dangerous and harmful to children, or work whose schedule interferes with their ability to attend regular school, or work that affects in any manner their ability to focus during school or experience healthy childhood.",
+      "body": "The term ‘child labour’, as defined by International Labour Organization (ILO), is the work that deprives children of their childhood, their potential and their dignity, and that is harmful to physical and mental development.",
       "content": "According to ILO, children or adolescents who participate in work that does not affect their health and personal development or interfere with their schooling, is not child labour; rather it may generally be regarded as being something positive. Such harmless work includes activities such as helping their parents around the home, assisting family or earning pocket money outside school hours and over holidays. These kinds of activities, suggests ILO, may contribute to children’s development by providing them with skills and experience, and help to prepare them to be productive members of society during their adult life."
     },
     {
@@ -50,7 +62,7 @@
       "category": 3,
       "image": "https://image.slidesharecdn.com/atoms-140825094048-phpapp01/95/introduction-to-atomic-energy-and-nuclear-reactors-1-638.jpg?cb=1408959736",
       "title": "Atomic Energy",
-      "body": "Until World War II, the world was familiar with only mechanical, chemical, acoustic, thermal, optic magnetic and electrical form of energy. But on a fateful day in 1945 when the US explode atom bomb over Hiroshima, the world got aware of the nuclear energy.",
+      "body": "Until World War II, the world was familiar with only mechanical, chemical, acoustic, thermal, optic magnetic and electrical form of energy.",
       "content": "How exactly is energy got from the atom? The atom is the tiniest speck of matter. Each atom has a central core called the nucleus, around which revolve the electrons. The nucleus is built up of two kinds of very minute particles called protons and neutrons. The electron has a negative electrical charge, the proton has an equal positive charge and the neutron has no charge.The nucleus of the radium atom constantly disintegrates ejecting alpha particles which are nuclei of helium atoms. This phenomenon is called radioactivity. Uranium is another radioactive element. In 1938 Hahn and Strassman bombarded uranium with neutrons and found traces of barium in the material"
     },
     {
@@ -59,7 +71,7 @@
       "category": 1,
       "image": "https://www.lvusd.org/cms/lib/CA01930645/Centricity/Domain/724/character.png",
       "title": "Character Building",
-      "body": "The word character when used it is generally attributed to an individual only, but it is not so, as-the word is equally applicable to a social group or a nation. A set of distinctive personal qualities found in an individual constitutes the character of that particular person and the something applies to a nation or social groups.",
+      "body": "The word character when used it is generally attributed to an individual only.",
       "content": "The word character is generally used to indicate good character only. Each one of us possesses character – either good or bad as there are several hues and shades of character ranging from highest good to extreme bad. Except a few individuals who are either highly noble for extremely bad rest of the human beings fall in between these two ends. For example, Lord Ram stands on supreme good and whereas Ravana stands on the extreme bad end.Character to a certain extent is hereditary but it is built by acquiring a long list of virtues. The qualities like morality and discipline, honesty and integrity will power and courage, chastity and loyalty, sacrifice and self respect, kindness and truthfulness go a long way in building up a noble character. Practice of morality is a must for developing a good character because it teaches a person to distinguish good from bad and right from wrong. Another important virtue is discipline. Discipline breeds character. A person of high morality always practices truth and justice. Such qualities develop self- respect and strong will power; qualities contribute for the development of good character."
     },
     {
@@ -68,7 +80,7 @@
       "category": 2,
       "image": "http://indianapublicmedia.org/amomentofscience/files/2016/03/amos_atmos-940x626.jpg",
       "title": "Ozone layer Depletion",
-      "body": "Ozone is the layer of colourless gas that forms a protective covering in the Earth’s upper atmosphere. Ozone is formed when oxygen molecules absorb ultraviolet photons and undergo a chemical reaction known as photo dissociation or photolysis, where a single molecule of oxygen breaks down to two oxygen atoms. The ozone molecules, in turn, absorb ultraviolet rays between 310 to 200 nm wavelengths and thereby prevent these harmful radiations from entering the Earth’s atmosphere. In the process, ozone molecules split up into a molecule of oxygen and an oxygen atom. The oxygen atom (O) again combines with the oxygen molecule (O2) to regenerate an ozone molecule (O3). Thus, the total amount of ozone is maintained by this continuous process of destruction and regeneration.",
+      "body": "Ozone is the layer of colourless gas that forms a protective covering in the Earth’s upper atmosphere.",
       "content": "The problem with the ozone layer is that when certain chemicals, such as chlorofluorocarbons, reach the stratosphere, they break down into chlorine and bromine, which react with the ozone and destroy it.The plan is to somehow clean the stratosphere and get rid of these chemicals. For example, some scientists have suggested using giant lasers on top of mountains to basically break apart harmful chemicals before they reach the stratosphere.That would be incredibly expensive, not to mention that the side effects aren’t clear yet. Scrubbing out the chemicals this way might end up causing serious environmental problems."
     }
   ],
@@ -86,7 +98,7 @@
       "id": 2,
       "name": "Hameed Gamal",
       "email": "Jayne_Kuhic@sydney.com",
-      "body": "Great Article and very useful Thank you Bret.",
+      "body": "Great Article and very useful Thank you Antonette.",
       "image": "https://s-media-cache-ak0.pinimg.com/originals/4b/62/09/4b6209bd1b002e78b3b412f19e2f3ef7.jpg"
     },
     {
@@ -112,6 +124,14 @@
       "email": "Hayden@althea.biz",
       "body": "Amazing Article Thank you for sharing.",
       "image": "http://des.gearbest.com/uploads/2015/201504/heditor/201504160904173781.jpg"
+    },
+    {
+      "id": 0.019372076990787024,
+      "postId": 4,
+      "image": "http://www.sessionlogs.com/media/icons/defaultIcon.png",
+      "email": "blaa@bla.com",
+      "name": "myname",
+      "body": "new comment"
     }
   ],
   "users": [
